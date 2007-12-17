@@ -10,7 +10,6 @@ Source: 	%{name}-%{version}-libc6-src.tar.bz2
 License: 	GPL
 URL: 		http://www.q-software-solutions.com/weditlinux/
 Group: 		Development/Other
-Buildroot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gtk+-devel >= 1.2
 
 %description
