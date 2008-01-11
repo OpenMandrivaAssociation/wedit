@@ -47,15 +47,15 @@ mv src/Makefile.new src/Makefile
 make DESTDIR=$RPM_BUILD_ROOT install
 
 (cd $RPM_BUILD_ROOT
-mkdir -p ./usr/lib/menu
-cat > ./usr/lib/menu/%{name} <<EOF
-?package(%{name}):\
-command="/usr/bin/wedit"\
-title="Wedit"\
-longtitle="User-friendly IDE"\
-needs="x11"\
-icon="development_environment_section.png"\
-section="Applications/Development/Development Environments"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/wedit
+Name=Wedit
+Comment=User-friendly IDE
+Icon=development_environment_section
+Categories=Development;IDE / GUIDesigner;
 EOF
 )
  
@@ -73,5 +73,5 @@ rm -rf ${RPM_BUILD_ROOT}
 %doc AUTHORS INSTALL COPYING NEWS README ChangeLog
 %{_bindir}/*
 %{_datadir}/%{name}
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 
