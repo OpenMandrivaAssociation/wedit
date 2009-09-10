@@ -1,6 +1,6 @@
 %define name wedit
 %define version 0.9.8
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: 	User-friendly IDE
 Name: 		%{name}
