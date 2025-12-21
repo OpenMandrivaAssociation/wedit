@@ -11,6 +11,11 @@ License: 	GPL
 URL: 		https://www.q-software-solutions.com/weditlinux/
 Group: 		Development/Other
 Buildroot: 	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gtk+-devel >= 1.2
 
 %description
